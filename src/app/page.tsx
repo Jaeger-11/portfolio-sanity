@@ -12,7 +12,7 @@ export default async function Home() {
     <div className="flex flex-col px-4 md:p-0  md:max-w-[90%] lg:max-w-[80%] mt-6 mx-auto font-open-sans text-dark-color dark:text-grey">
       <main className="py-20">
         <h3 className="text-base md:text-xl font-bold">
-          <span className="text-lime">HEY, I'M</span> <br />
+          <span className="text-lime">HEY, I&apos;M</span> <br />
           <span className="text-3xl lg:text-6xl font-playfair">Falodun <br /> Oluwadamilola</span>
         </h3>
         <p className="mt-3 bg-lime text-white w-max p-4 bg-gradient-to-r from-[lime] to-gray-500 font-bold">A Frontend Developer.</p>
