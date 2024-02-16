@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans, Playfair_Display, Julee } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Provider from "@/utils/Provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"], variable:'--font-open-sans' });
+const playfair = Playfair_Display({subsets: ["latin"], variable: '--font-playfair', weight: '400'})
+const julee = Julee({subsets: ["latin"], variable: '--font-julee', weight:'400'})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${openSans.variable} ${playfair.variable} ${julee.variable} bg-grey dark:bg-dark-color text-dark-color dark:text-grey`}>
+        <Provider>
+          <div>
+            <Navbar/>
+            {children}
+            <Footer/>
+          </div>
+        </Provider>
+      </body>
     </html>
   );
 }
