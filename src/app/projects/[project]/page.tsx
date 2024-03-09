@@ -1,5 +1,5 @@
 import { getProject } from "@/sanity/sanity-utils";
-import { PortableText } from "sanity";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
 export default async function Project({params}:{
