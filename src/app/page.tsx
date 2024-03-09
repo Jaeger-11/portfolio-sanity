@@ -33,6 +33,11 @@ export default async function Home() {
         </section>
       </div>
 
+      <div className="my-20 md:my-40 text-3xl md:text-6xl md:p-4 w-4/5 md:w-2/3 font-playfair text-center mx-auto">
+          <h2 className="mb-4">You've a work for me, or want to collaborate</h2>
+          <Link href={'/'} className="border text-lg p-2 md:text-2xl md:p-4 transition-all font-bold text-grey border-lime shadow-lg bg-lime hover:bg-transparent hover:text-lime hover:border-lime hover:border-2">GET IN TOUCH</Link>
+      </div>
+
       
     </div>
   );
