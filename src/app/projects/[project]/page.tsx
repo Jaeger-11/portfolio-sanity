@@ -22,7 +22,7 @@ export default async function Project({params}:{
                 />
             </div>
             <div className="my-4">
-                <PortableText value={project.content}/>
+                 <PortableText value={project.content}/>
             </div>
             <a href={project.url} className="md:hidden my-6 block w-max border py-1 px-4 transition-all font-bold text-base font-playfair cursor-pointer text-dark-color dark:text-grey border-dark-color dark:border-grey hover:bg-lime hover:text-grey dark:hover:text-dark-color">View Project</a>
         </article>
