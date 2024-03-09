@@ -43,3 +43,5 @@ export async function getProject(slug:string):Promise<projectType> {
         }`, {slug}
     )
 }
+
+// kkkk
