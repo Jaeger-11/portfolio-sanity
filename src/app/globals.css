@@ -9,7 +9,15 @@
 .skills div svg{
    @apply h-6 w-6 md:h-10 md:w-10
 }
-
+.contact-info{
+    @apply flex flex-col gap-4 text-right
+}
+.contact-info h4{
+    @apply uppercase md:text-xs font-bold font-playfair text-lime
+}
+.contact-info h3{
+    @apply md:text-2xl lg:text-3xl font-julee underline underline-offset-8
+}
 /* @media (prefers-color-scheme: dark){
     body {
         --tw-text-opacity: 1;

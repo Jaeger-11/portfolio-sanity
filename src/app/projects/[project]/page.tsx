@@ -28,3 +28,5 @@ export default async function Project({params}:{
         </article>
     )
 }
+
+// export const dynamic = 'force-dynamic';

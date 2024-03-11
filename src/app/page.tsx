@@ -20,7 +20,7 @@ export default async function Home() {
 
       <Skills />
 
-      <div className="mt-20 gap-8">
+      <div className="mt-20 gap-8" id="projects">
         <h2 className="text-right text-lg md:text-3xl capitalize italic font-julee text-gray-500">...Some Personal Projects</h2>
         <section className=" mt-5 md:mt-10 grid grid-cols-1 gap-2 md:gap-4">
           {revProjects.map((project) => {
@@ -35,7 +35,7 @@ export default async function Home() {
 
       <div className="my-20 md:my-40 text-3xl md:text-6xl md:p-4 w-4/5 md:w-2/3 font-playfair text-center mx-auto">
           <h2 className="mb-4">You&apos;ve a work for me, or want to collaborate</h2>
-          <Link href={'/'} className="border text-lg p-2 md:text-2xl md:p-4 transition-all font-bold text-grey border-lime shadow-lg bg-lime hover:bg-transparent hover:text-lime hover:border-lime hover:border-2">GET IN TOUCH</Link>
+          <Link href={'/contact'} className="border text-lg p-2 md:text-2xl md:p-4 transition-all font-bold text-grey border-lime shadow-lg bg-lime hover:bg-transparent hover:text-lime hover:border-lime hover:border-2">GET IN TOUCH</Link>
       </div>
 
       
