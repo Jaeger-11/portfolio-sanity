@@ -2,7 +2,7 @@
 const page = () => {
   return (
     <div className="my-20 px-4 md:p-0  md:max-w-[90%] lg:max-w-[80%] mx-auto lg:flex lg:items-center justify-between">
-        <h2 className="md:text-3xl lg:text-5xl font-playfair">Get In Touch With Me <br /> <span className="text-lime">Let&apos;s Connect!</span>  </h2>
+        <h2 className="text-3xl lg:text-5xl font-playfair">Get In Touch With Me <br /> <span className="text-lime">Let&apos;s Connect!</span>  </h2>
         <section className="contact-info">
             <div>
                 <h4>github</h4>
