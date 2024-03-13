@@ -47,9 +47,8 @@ export default async function Home() {
             {el}
           </MotionDiv>
           ))}
-          {/* <span className="text-3xl lg:text-6xl font-playfair">Falodun <br /> Oluwadamilola</span> */}
         </h3>
-        <p className="mt-3 bg-lime text-white w-max p-4 bg-gradient-to-r from-[lime] to-gray-500 font-bold">A Frontend Developer.</p>
+        <p className="mt-3 bg-lime text-sm md:text-base text-white w-max p-4 bg-gradient-to-r from-[lime] to-gray-500 font-bold">A Frontend Developer.</p>
       </MotionDiv>
 
       <Skills />
@@ -59,7 +58,7 @@ export default async function Home() {
         <section className=" mt-5 md:mt-10 grid grid-cols-1 gap-2 md:gap-2">
           {revProjects.map((project) => {
             return (
-              <MotionDiv initial={{opacity: 0.2}} whileInView={{opacity:1, transition: {delay:1, duration:1}}}>
+              <MotionDiv key={project._id} initial={{opacity: 0.2}} whileInView={{opacity:1, transition: {delay:1, duration:1}}}>
                 <h3 className="text-3xl md:text-5xl md:p-4 font-julee uppercase font-bold w-max hover:scale-105 hover:text-lime transition-all">
                   <Link href={`/projects/${project.slug}`} key={project._id}>
                     {project.name}
