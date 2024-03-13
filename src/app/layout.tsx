@@ -4,10 +4,16 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Provider from "@/utils/Provider";
+import MotionDiv from "@/components/MotionDiv";
 
 const openSans = Open_Sans({ subsets: ["latin"], variable:'--font-open-sans' });
 const playfair = Playfair_Display({subsets: ["latin"], variable: '--font-playfair', weight: '400'})
 const julee = Julee({subsets: ["latin"], variable: '--font-julee', weight:'400'})
+
+const variants = {
+  hidden: { opacity:0, x:-200, y:0 },
+  enter: {opacity:1, x:0, y:0}
+}
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +31,9 @@ export default function RootLayout({
         <Provider>
           <div>
             <Navbar/>
+            <MotionDiv variants={variants} initial="hidden" animate="enter" transition={{type: 'linear'}} className="overflow-hidden">
             {children}
+            </MotionDiv>
             <Footer/>
           </div>
         </Provider>

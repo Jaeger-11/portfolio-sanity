@@ -13,7 +13,7 @@
     @apply flex flex-col gap-4 my-12 lg:mt-0 lg:text-right
 }
 .contact-info h4{
-    @apply uppercase md:text-xs font-bold font-playfair text-lime
+    @apply uppercase text-xs font-bold font-playfair text-lime
 }
 .contact-info h3{
     @apply text-2xl lg:text-3xl font-julee underline underline-offset-8

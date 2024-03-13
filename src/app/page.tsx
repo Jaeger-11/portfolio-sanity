@@ -1,34 +1,72 @@
 import Skills from "@/components/Skills";
 import { getProjects } from "@/sanity/sanity-utils";
-import Image from "next/image";
+import MotionDiv from "@/components/MotionDiv";
 import Link from "next/link";
 
 export default async function Home() {
   let projects = await getProjects();
-  let revProjects = projects.reverse()
-  console.log(projects)
+  let revProjects = projects.reverse();
+  const name = "Falodun".split("");
+  const name2 = "Oluwadamilola".split("");
 
   return (
     <div className="flex flex-col px-4 md:p-0  md:max-w-[90%] lg:max-w-[80%] mt-6 mx-auto font-open-sans text-dark-color dark:text-grey">
-      <main className="py-20">
+      <MotionDiv 
+        initial={{x:-100}}
+        animate={{ x: 0 }}
+        transition={{ ease: "easeOut", duration: 1.5 }} 
+        className="py-20">
         <h3 className="text-base md:text-xl font-bold">
-          <span className="text-lime">HEY, I&apos;M</span> <br />
-          <span className="text-3xl lg:text-6xl font-playfair">Falodun <br /> Oluwadamilola</span>
+        <span className="text-lime">HEY, I&apos;M</span> <br />
+          {name.map((el, i) => (
+          <MotionDiv
+          className="text-3xl lg:text-6xl font-playfair inline"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.25,
+              delay: i / 10
+            }}
+            key={i}
+          >
+            {el}
+          </MotionDiv>
+          ))}
+          <br />
+          {name2.map((el, i) => (
+          <MotionDiv
+          className="text-3xl lg:text-6xl font-playfair inline"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.25,
+              delay: i / 5
+            }}
+            key={i}
+          >
+            {el}
+          </MotionDiv>
+          ))}
+          {/* <span className="text-3xl lg:text-6xl font-playfair">Falodun <br /> Oluwadamilola</span> */}
         </h3>
         <p className="mt-3 bg-lime text-white w-max p-4 bg-gradient-to-r from-[lime] to-gray-500 font-bold">A Frontend Developer.</p>
-      </main>
+      </MotionDiv>
 
       <Skills />
 
       <div className="mt-20 gap-8" id="projects">
         <h2 className="text-right text-lg md:text-3xl capitalize italic font-julee text-gray-500">...Some Personal Projects</h2>
-        <section className=" mt-5 md:mt-10 grid grid-cols-1 gap-2 md:gap-4">
+        <section className=" mt-5 md:mt-10 grid grid-cols-1 gap-2 md:gap-2">
           {revProjects.map((project) => {
             return (
-            <Link href={`/projects/${project.slug}`} key={project._id} className="w-max p-1 hover:scale-105 hover:text-lime transition-all">
-                {/* <Image src={project.image} alt={project.name} width={500} height={300}/> */}
-              <h3 className="text-3xl md:text-5xl md:p-4 font-julee uppercase font-bold">{project.name}</h3>
-              </Link>)
+              <MotionDiv initial={{opacity: 0.2}} whileInView={{opacity:1, transition: {delay:1, duration:1}}}>
+                <h3 className="text-3xl md:text-5xl md:p-4 font-julee uppercase font-bold w-max hover:scale-105 hover:text-lime transition-all">
+                  <Link href={`/projects/${project.slug}`} key={project._id}>
+                    {project.name}
+                  </Link>
+                </h3>
+              </MotionDiv>
+            )
           })}
         </section>
       </div>
